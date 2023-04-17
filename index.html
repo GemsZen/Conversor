@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Conversor de Bases Numéricas</title>
+</head>
+
+<body>
+  <div class="container">
+    
+    <header class="header">
+      <img src="8B.png" alt="8B">
+      <h2>Conversão de Bases Numéricas</h2>
+    </header>
+
+    <div class="box-form">
+      <form>
+        <!-- ...Select para escoher o tipo de base a ser convertida -->
+        <label for="tipos_bases">Selecione uma Base: </label>
+        <select id="tipos_bases" onchange="habi_desabi(this.value)">
+          <option value="0" selected>--</option>
+          <option value="2">Binário</option> 
+          <option value="8">Octal</option>
+          <option value="10">Decimal</option>
+          <option value="16">Hexadecimal</option>
+        </select>
+
+        <!-- ...Entrada de valor binario -->
+        <label for="ipt_binario">Binário:</label>
+        <input type="text" id="ipt_binario" onkeypress="return type_binario(event);" disabled>
+
+
+       <!-- ...Entrada de valor octal -->
+        <label for="ipt_octal">Octal:</label>
+        <input type="text" id="ipt_octal" onkeypress="return type_octal(event);" disabled>
+
+
+        <!-- ...Entrada de valor decimal -->
+        <label for="ipt_decimal">Decimal:</label>
+        <input type="text" id="ipt_decimal" onkeypress="return type_decimal(event);" disabled />
+
+
+        <!-- ...Entrada de valor hexadecimal -->
+        <label for="ipt_hexadecimal">Hexadecimal:</label>
+        <input type="text" id="ipt_hexadecimal" onkeypress="return type_hexadecimal(event);" disabled>
+
+        <div class="container-btn">
+          <!-- ...Botão para executar os calculo de acordo o tipo de base escolhida no select -->
+          <button type="button" onclick="chamar_calculo();">Converter</button>
+
+          <!-- ...Botão para limpar os dados inseridos no formulario -->
+          <input type="reset" value="Limpar" onclick="habi_desabi()">
+        </div>
+      </form>
+    </div>
+    <!--***** FIM - Formulario de exibição no browser *****-->
+   
+  </div>
+
+  <script src="script.js"></script>
+
+</body>
+
+</html>
